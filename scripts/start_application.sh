@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo service gunicorn restart
+sudo systemctl restart django
