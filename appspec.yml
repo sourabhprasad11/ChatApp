@@ -1,19 +1,14 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /home/ec2-user/ChatApp/
-permissions:
-  - object: /home/ec2-user/ChatApp/
-    pattern: "**"
-    owner: ec2-user
-    group: ec2-user
+  - source: ./
+    destination: /home/ec2-user/DpyApp/
 hooks:
   BeforeInstall:
     - location: scripts/before_install.sh
       timeout: 300
-      runas: ec2-user
+      runas: root
   ApplicationStart:
     - location: scripts/start_application.sh
       timeout: 600
-      runas: ec2-user
+      runas: root
