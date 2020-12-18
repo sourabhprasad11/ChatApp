@@ -1,3 +1,4 @@
 #!/bin/bash
 
-sudo systemctl restart django
+sudo systemctl start django
+sudo systemctl enable django
