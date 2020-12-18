@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: ./
+  - source: /
     destination: /home/ec2-user/DpyApp/
 permissions:
   - object: /home/ec2-user/DpyApp/
@@ -13,15 +13,7 @@ hooks:
     - location: scripts/before_install.sh
       timeout: 300
       runas: ec2-user
-  AfterInstall:
-    - location: scripts/install_dependancies.sh
-      timeout: 600
-      runas: ec2-user
-    - location: scripts/gunicorn.sh
-      timeout: 600
-      runas: ec2-user
   ApplicationStart:
     - location: scripts/start_application.sh
       timeout: 600
       runas: ec2-user
-
